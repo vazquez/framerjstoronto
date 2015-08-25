@@ -1,6 +1,12 @@
+@black: #151517;
+@md-screen: 767px;
+@sm-screen: 360px;
+@nunito: 'Nunito', sans-serif;
+@open-sans: 'Open Sans', sans-serif;
+
 body {
-  background: #151517;
-  font-family: 'Nunito', sans-serif;
+  background: @black;
+  font-family: @nunito;
   color: white;
   height: 100%;
 }
@@ -22,6 +28,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .flex-item {
@@ -29,10 +36,10 @@ body {
 }
 
 img {
-  width: 200px;
+  width: 20rem;
   display: block;
   margin: 0 auto;
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: @md-screen) {
     width: 30vw;
   }
 }
@@ -41,27 +48,27 @@ h1 {
   font-size: 2rem;
   font-weight: 300;
   text-align: center;
-  @media screen and (min-width: 360px) {
+  @media screen and (min-width: @sm-screen) {
     font-size: 3.6rem;
   }
 }
 
 .details {
-  margin: 10px 0 0 0;
+  margin: 1rem 0 0 0;
   text-align: center;
-  @media screen and (min-width: 767px) {
-    margin: 20px 0 0 0;
+  @media screen and (min-width: @md-screen) {
+    margin: 2rem 0 0 0;
   }
 }
 
 h3 {
   font-size: 1.8rem;
   text-align: center;
-  margin: 10px 0 0 0;
-  font-family: 'Open Sans', sans-serif;
+  margin: 1rem 0 0 0;
+  font-family: @open-sans;
   font-weight: 400;
   color: rgba(255,255,255,0.85);
-  @media screen and (min-width: 360px) {
+  @media screen and (min-width: @sm-screen) {
     font-size: 2.4rem;
   }
 }
@@ -69,12 +76,12 @@ h3 {
 .cta-primary {
   position: relative;
   display: inline-block;
-  padding: 12px 20px;
-  margin: 30px 0 0 0;
+  padding: 1.2rem 2rem;
+  margin: 3rem 0 0 0;
   border: 1px solid #D95245;
   background-image: linear-gradient(-180deg, #FA6052 0%, #E05043 100%);
   box-shadow: inset 0px 1px 1px 0px rgba(245,231,231,0.50);
-  border-radius: 4px;
+  border-radius: 0.4rem;
   font-size: 1.6rem;
   line-height: 2rem;
   color: white;
@@ -83,7 +90,7 @@ h3 {
   &:before {
     position: absolute;
     left: -100%;
-    top: 12px;
+    top: 1.2rem;
     content: url("../images/r-arrow.svg");
     height: 100%;
     width: 100%;
@@ -119,10 +126,18 @@ h3 {
 footer {
   position: absolute;
   bottom: 0;
-  right: 30px;
+  right: 3rem;
   width: 100%;
-  height: 60px;
+  height: 6rem;
   color: rgba(255,255,255,0.2);
   text-align: right;
-  padding-top: 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
